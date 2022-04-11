@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -31,19 +32,20 @@ public class TextBoxTests {
 
         open("/automation-practice-form");
 
-        $("[id=firstName").setValue(firstName);
-        $("[id=lastName").setValue(lastName);
-        $("[id=userEmail").setValue(email);
-        $("[id=gender-radio-1").click();
-        $("[id=userNumber").setValue(userNumber);
-        $("[id=dateOfBirthInput").setValue(dateOfBirth);
-        $("[id=subjectsContainer").setValue(subjects).pressEnter();
-        $("[id=hobbies-checkbox-2").click();
-        $("[id=uploadPicture").uploadFromClasspath(picture);
-        $("[id=currentAddress").setValue(adress);
-        $("[id=state").setValue(state);
-        $("[id=state").setValue(city);
-        $("[id=submit").click();
+        $("id=firstName").setValue(firstName);
+        $("id=lastName").setValue(lastName);
+        $("id=userEmail").setValue(email);
+        $("id=genterWrapper").$(byText("Male")).click();
+        $("id=userNumber").setValue(userNumber);
+        $("id=dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOption(month); //todo upgrade this lint Birth date
+        $("id=subjectsContainer").setValue(subjects).pressEnter();
+        $("id=hobbies-checkbox-2").click();
+        $("id=uploadPicture").uploadFromClasspath(picture);
+        $("id=currentAddress").setValue(adress);
+        $("id=state").setValue(state);
+        $("id=state").setValue(city);
+        $("id=submit").click();
 
     }
 }

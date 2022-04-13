@@ -1,6 +1,7 @@
 package qa.guru;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -38,7 +39,7 @@ public class TextBoxTests {
         $("id=genterWrapper").$(byText("Male")).click();
         $("id=userNumber").setValue(userNumber);
         $("id=dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption(month); //todo upgrade this lint Birth date
+        $(".react-datepicker__month-select").selectRadio(dateOfBirth);
         $("id=subjectsContainer").setValue(subjects).pressEnter();
         $("id=hobbies-checkbox-2").click();
         $("id=uploadPicture").uploadFromClasspath(picture);

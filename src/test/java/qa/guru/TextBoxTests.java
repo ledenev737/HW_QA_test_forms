@@ -29,7 +29,7 @@ public class TextBoxTests {
         String day = "17";
         String subjects = "Maths";
         String hobby = "Music";
-        String picture = "img/privet.png";
+        String picture = "img\\privet.png";
         String adress = "Bali";
         String state = "NCR";
         String city = "Delhi";

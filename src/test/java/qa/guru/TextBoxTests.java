@@ -24,29 +24,34 @@ public class TextBoxTests {
         String lastName = "Ledenev";
         String email = "Ledenev737@gmail.com";
         String userNumber = "89991112221";
-        String dateOfBirth = "17 Jan 1985";
+        String month = "January";
+        String year = "1985";
+        String day = "17";
         String subjects = "Maths";
-        String picture = "C:/privet.png";
+        String hobby = "Music";
+        String picture = "img/privet.png";
         String adress = "Bali";
         String state = "NCR";
         String city = "Delhi";
 
         open("/automation-practice-form");
 
-        $("id=firstName").setValue(firstName);
-        $("id=lastName").setValue(lastName);
-        $("id=userEmail").setValue(email);
-        $("id=genterWrapper").$(byText("Male")).click();
-        $("id=userNumber").setValue(userNumber);
-        $("id=dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectRadio(dateOfBirth);
-        $("id=subjectsContainer").setValue(subjects).pressEnter();
-        $("id=hobbies-checkbox-2").click();
-        $("id=uploadPicture").uploadFromClasspath(picture);
-        $("id=currentAddress").setValue(adress);
-        $("id=state").setValue(state);
-        $("id=state").setValue(city);
-        $("id=submit").click();
+        $("#firstName").setValue(firstName);
+        $("#lastName").setValue(lastName);
+        $("#userEmail").setValue(email);
+        $("#genterWrapper").$(byText("Male")).click();
+        $("#userNumber").setValue(userNumber);
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__year-select").selectOption(year);
+        $(".react-datepicker__month").$(byText(day)).click();
+        $("#subjectsInput").setValue(subjects).pressEnter();
+        $("#hobbiesWrapper").$(byText(hobby)).click();
+        $("#uploadPicture").uploadFromClasspath(picture);
+        $("#currentAddress").setValue(adress);
+        $("#state").setValue(state);
+        $("#state").setValue(city);
+        $("#submit").click();
 
     }
 }

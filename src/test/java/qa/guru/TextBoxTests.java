@@ -49,9 +49,9 @@ public class TextBoxTests {
         $("#hobbiesWrapper").$(byText(hobby)).click();
         $("#uploadPicture").uploadFromClasspath(picture);
         $("#currentAddress").setValue(adress);
-        $("#stateCity-wrapper").$(byText("Select State")).click();
+        $("#state").click();
         $(byText(state)).click();
-        $("#stateCity-wrapper").$(byText("Select City")).click();
+        $("#city").click();
         $(byText(city)).click();
         $("#submit").click();
 

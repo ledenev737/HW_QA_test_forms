@@ -1,4 +1,4 @@
-package qa.guru;
+package qa.guru.tests;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;

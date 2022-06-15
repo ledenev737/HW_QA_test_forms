@@ -30,7 +30,7 @@ public class TextBoxTestsWithFaker {
         String lastName = faker.name().lastName();
         String email = faker.internet().emailAddress();
         String gender = "Male";
-        String userNumber = faker.phoneNumber().phoneNumber();
+        String userNumber = "89111559494";
         String month = "January";
         String year = "1985";
         String day = "17";

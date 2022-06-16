@@ -1,7 +1,8 @@
-package qa.guru.pages;
+package Sana.Ledenev.qa.guru.pages;
 
-import qa.guru.pages.componets.CalendarComponents;
+import Sana.Ledenev.qa.guru.pages.componets.CalendarComponents;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -102,4 +103,12 @@ public class RegistrationFormPage {
 
         return this;
     }
+
+    public RegistrationFormPage checkResult(String key, String value) {
+        $(".table-responsive").$(byText(key))
+                .parent().shouldHave(text(value));
+
+        return this;
+    }
+
 }

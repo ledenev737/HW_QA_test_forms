@@ -1,4 +1,4 @@
-package qa.guru.pages.componets;
+package Sana.Ledenev.qa.guru.pages.componets;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;

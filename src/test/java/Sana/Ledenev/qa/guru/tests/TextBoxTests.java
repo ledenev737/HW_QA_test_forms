@@ -1,4 +1,4 @@
-package qa.guru.tests;
+package Sana.Ledenev.qa.guru.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;

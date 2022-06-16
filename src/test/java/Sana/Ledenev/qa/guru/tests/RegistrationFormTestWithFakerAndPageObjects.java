@@ -1,15 +1,13 @@
-package qa.guru.tests;
+package Sana.Ledenev.qa.guru.tests;
 
+import Sana.Ledenev.qa.guru.pages.RegistrationFormPage;
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import qa.guru.pages.RegistrationFormPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
 
-public class TextBoxTestsWithFaker {
+public class RegistrationFormTestWithFakerAndPageObjects {
 
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
@@ -42,7 +40,9 @@ public class TextBoxTestsWithFaker {
         String city = "Delhi";
 
         registrationFormPage.openPage()
-        //заносим данные в форму
+
+                //заносим данные в форму
+
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)
@@ -55,20 +55,19 @@ public class TextBoxTestsWithFaker {
                 .setAddress(address)
                 .setState(state)
                 .setCity(city)
-                .clickSubmit();
+                .clickSubmit()
 
-        // проверка
-        $(".table-responsive").shouldHave(
-                text(firstName + " " + lastName),
-                text(email),
-                text(gender),
-                text(userNumber),
-                text(day + " " + month + "," + year),
-                text(subjects),
-                text(hobby),
-                text(picture.substring(7)),
-                text(address),
-                text(state + " " + city)
-        );
+                // проверка
+
+                .checkResult("Student Name", firstName + lastName)
+                .checkResult("Student Email", email)
+                .checkResult("Gender", gender)
+                .checkResult("Mobile", userNumber)
+                .checkResult("Date of Birth", day + month + "," + year)
+                .checkResult("Subjects", subjects)
+                .checkResult("Hobbies", hobby)
+                .checkResult("Picture", picture)
+                .checkResult("Address", address)
+                .checkResult("State and City", state + city);
     }
 }

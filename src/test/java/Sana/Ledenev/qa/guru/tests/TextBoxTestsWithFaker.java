@@ -1,15 +1,15 @@
-package qa.guru.tests;
+package Sana.Ledenev.qa.guru.tests;
 
+import Sana.Ledenev.qa.guru.pages.RegistrationFormPage;
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import qa.guru.pages.RegistrationFormPage;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestsWithFakerAndPageObjects {
+public class TextBoxTestsWithFaker {
 
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
@@ -42,7 +42,7 @@ public class TestsWithFakerAndPageObjects {
         String city = "Delhi";
 
         registrationFormPage.openPage()
-                //заносим данные в форму
+        //заносим данные в форму
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)
